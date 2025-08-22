@@ -4,63 +4,37 @@ import Image from "next/image";
 
 import { useState } from 'react';
 
+import { Button } from "@/components/Button";
+
+import Link from 'next/link'
 
 
 export default function Home() {
-  const [currentPage, setPage] = useState('Home');
-
-  const renderPage = () => {
-    if (currentPage == "Home") {
-      return (
-        <HomePage/>
-      );
-    }
-    else if (currentPage == "Upload") {
-      return (
-        <UploadPage/>
-      );
-    }
-    else if (currentPage == "Submit") {
-      return (
-        <SubmitPage/>
-      );
-    }
-  }
-
   return (
-    <div>
+    <div className="flex flex-col items-center h-screen justify-center">
 
+      <div>
+        <h1 className="text-8xl">GeoGuelph</h1>
+      </div>
+
+
+      <div className="flex flex-row gap-4">
         <nav>
-          <button onClick={() => setPage('Upload')}>Upload</button>
-          <button onClick={() => setPage('Submit')}>Submit Photos</button>
+
+          <span>
+            <Link href="/play">
+              <button className="bg-black text-white m-8 p-3 px-5 rounded-full font-bold" >Upload</button>
+            </Link>
+            
+          </span>
+          <span>
+            <Link href="/submit">
+              <button className="bg-black text-white m-8 p-3 px-5 rounded-full font-bold" >Submit</button>
+            </Link>
+          </span>  
         </nav>
-        {renderPage()}
-   
+      </div>
     </div>
   );
 }
 
-function HomePage() {
-  return (
-    <p>Home Page</p>
-  );
-}
-
-
-function UploadPage() {
-  return (
-    <p>Upload Page</p>
-  );
-}
-
-function PlayPage() {
-  return (
-    <p>Play Page</p>
-  );
-}
-
-function SubmitPage() {
-  return (
-    <p>Submit Photos Page</p>
-  );
-}
