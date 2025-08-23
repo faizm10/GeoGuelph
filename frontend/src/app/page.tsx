@@ -4,9 +4,8 @@ import Image from "next/image";
 
 import { useState } from 'react';
 
-import { Button } from "@/components/Button";
-
 import Link from 'next/link'
+
 
 
 export default function Home() {
@@ -23,7 +22,7 @@ export default function Home() {
 
           <span>
             <Link href="/play">
-              <button className="bg-black text-white m-8 p-3 px-5 rounded-full font-bold" >Upload</button>
+              <button className="bg-black text-white m-8 p-3 px-5 rounded-full font-bold" >Play</button>
             </Link>
             
           </span>
