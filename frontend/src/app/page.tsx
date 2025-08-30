@@ -27,8 +27,8 @@ export default function Home() {
             
           </span>
           <span>
-            <Link href="/submit">
-              <button className="bg-black text-white m-8 p-3 px-5 rounded-full font-bold" >Submit</button>
+            <Link href="/upload">
+              <button className="bg-black text-white m-8 p-3 px-5 rounded-full font-bold" >Upload</button>
             </Link>
           </span>  
         </nav>

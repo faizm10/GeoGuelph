@@ -3,7 +3,8 @@ import { useState, useCallback, useRef } from 'react';
 
 import { MapContainer, Marker, TileLayer, useMapEvents } from 'react-leaflet';
 
-const icon = L.icon({ iconUrl: "marker-icon.png" });
+
+
 
 const centers = {
   lat: 43.5327,
@@ -12,13 +13,17 @@ const centers = {
 
 
 export default function MarkerComponent(props) {
-    const [position, setPosition] = useState(centers)
+    const [position, setPosition] = useState([props.lat, props.lng])
+
+    const icon = L.icon({iconUrl: props.icon, iconSize: [26, 41], iconAnchor: [13, 41]});
 
     const map = useMapEvents({
       click(e) {
         // Handle map click event
-        setPosition(e.latlng)
-        console.log('Map clicked at:', e.latlng);
+        if (props.movable == true) {
+          setPosition(e.latlng)
+        }
+        
       }
       // ... other event handlers
     });
