@@ -22,6 +22,9 @@ export default function MarkerComponent(props) {
         // Handle map click event
         if (props.movable == true) {
           setPosition(e.latlng)
+          if (props.setPosition) {
+            props.setPosition(e.latlng)
+          }
         }
         
       }
