@@ -33,7 +33,8 @@ export default function Submit() {
             alert("Connect button to database\nSend photo + location when button clicked")
         }
         
-        // send position state variable + photo (we might need to download the user uploaded photo, cause I think photoURL variable is temporary)
+        // send position state variable + photo (we might need to download the user uploaded photo, 
+        // cause I think photoURL variable is temporary)
     }
 
     return (
