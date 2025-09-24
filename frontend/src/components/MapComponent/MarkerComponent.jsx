@@ -21,7 +21,10 @@ export default function MarkerComponent(props) {
       click(e) {
         // Handle map click event
         if (props.movable == true) {
-          setPosition(e.latlng)
+          // latitude longitude boundaries of the University of Guelph Campus (markers can't be placed outside of campus)
+          if ((e.latlng.lat > 43.526689) && (e.latlng.lat < 43.544922) && (e.latlng.lng < -80.220000) && (e.latlng.lng > -80.233534)) {
+            setPosition(e.latlng)
+          }
           if (props.setPosition) {
             props.setPosition(e.latlng)
           }
